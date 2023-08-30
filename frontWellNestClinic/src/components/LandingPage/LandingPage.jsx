@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 const LandingPage = () => {
     return (
@@ -9,13 +9,10 @@ const LandingPage = () => {
 
             <input
                 type="text"
-                value={cedula}
-                onChange={(e) => setCedula(e.target.value)}
                 placeholder="Ingresa tu cédula"
             />
-            <button onClick={verificarUsuario}>Verificar</button>
+            <button>Verificar</button>
 
-            <p>{mensaje}</p>
         </div>
     );
 };
