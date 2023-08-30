@@ -1,19 +1,19 @@
 import React from "react";
+import { Link } from "react-router-dom";
+import styles from "./LandingPage.module.css"
 
 
 const LandingPage = () => {
     return (
-        <div>
-            <h1>Bienvenido a WellNest Clinic</h1>
-            <p>Ingresa tu cédula de identidad para verificar si eres usuario registrado:</p>
-
-            <input
-                type="text"
-                placeholder="Ingresa tu cédula"
-            />
-            <button>Verificar</button>
-
+        <div className={styles.container}>
+        <h1 className={styles.heading}>Bienvenido a WellNest Clinic</h1>
+        <p className={styles.description}>Transforma tu experiencia médica con nosotros.</p>
+        
+        <div className={styles.buttoncontainer}>
+            <Link to="/checkUser" className={styles.button}>SignUp</Link>
+            <Link to="/login" className={styles.button}>LogIn</Link>
         </div>
+    </div>
     );
 };
 
