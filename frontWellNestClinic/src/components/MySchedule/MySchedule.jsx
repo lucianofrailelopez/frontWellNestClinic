@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import styles from "./MySchedule.module.css"
+import { Link } from 'react-router-dom';
+import styles from "./MySchedule.module.css";
 
 const MySchedule = () => {
     const [schedule, setSchedule] = useState([
@@ -15,23 +16,29 @@ const MySchedule = () => {
             setSchedule(updatedSchedule);
         }
     };
-    
 
     return (
         <div className={styles.container}>
             <h2 className={styles.header}>Mis Citas Médicas</h2>
-            <ul>
-                {schedule.map(schedule => (
-                    <li key={schedule.id} className={styles.appointment}>
-                        <span className={styles.date}> {schedule.date}</span>
-                        <span className={styles.doctor}>{schedule.doctor}</span>
-                        <span> {schedule.especialidad}</span>
-                        <button className={styles['cancel-button']} onClick={() => handleCancelSchedule(schedule.id)}>
-                            Cancelar Cita
-                        </button>
-                    </li>
-                ))}
-            </ul>
+            {schedule.length === 0 ? (
+                <p className={styles.noAppointments}>Usted no posee citas agendadas</p>
+            ) : (
+                <ul className={styles.scheduleList}>
+                    {schedule.map(schedule => (
+                        <li key={schedule.id} className={styles.appointment}>
+                            <span className={styles.date}>{schedule.date}</span>
+                            <span className={styles.doctor}>{schedule.doctor}</span>
+                            <span className={styles.specialty}>{schedule.especialidad}</span>
+                            <button className={styles['cancel-button']} onClick={() => handleCancelSchedule(schedule.id)}>
+                                Cancelar Cita
+                            </button>
+                        </li>
+                    ))}
+                </ul>
+            )}
+            <Link to="/newSchedule" className={styles.newScheduleButton}>
+                Agendar Nueva Cita
+            </Link>
         </div>
     );
 };
