@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import LandingPage from './components/LandingPage/LandingPage';
 import Login from './components/Login/Login';
