@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
+import styles from "../LandingPage/LandingPage.module.css"
 
 const CheckUser = () => {
     const navigate = useNavigate(); 
@@ -23,14 +24,15 @@ const CheckUser = () => {
     };
 
     return (
-        <div>
+        <div className={styles.container}>
+            <h2>Valide su usuario para continuar con el registro:</h2>
             <input
                 type="text"
                 placeholder="Ingrese su cédula"
                 value={cedula}
                 onChange={handleCedulaChange}
             />
-            <button onClick={handleCheckUser}>Validar Usuario</button>
+            <button className={styles.button} onClick={handleCheckUser}>Validar Usuario</button>
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
         </div>
     );
