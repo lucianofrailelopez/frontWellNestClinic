@@ -1,0 +1,52 @@
+.container {
+    max-width: 600px; /* Aumenta el ancho del contenedor */
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px; /* Aumenta el radio de borde */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.header {
+    font-size: 28px; /* Aumenta el tamaño de fuente del encabezado */
+    margin-bottom: 20px;
+}
+
+.appointment {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 1px solid #eee; /* Agrega un borde a cada item */
+    padding: 15px; /* Aumenta el relleno */
+    margin-bottom: 15px; /* Añade margen inferior entre las citas */
+    border-radius: 5px; /* Añade un radio de borde */
+}
+
+.date {
+    font-size: 20px; /* Aumenta el tamaño de fuente de la fecha */
+    margin-right: 20px;
+    padding: 15px;
+}
+
+.doctor {
+    font-size: 18px; /* Aumenta el tamaño de fuente del doctor */
+    color: #555;
+    margin-left: 20px;
+    padding: 15px;
+}
+
+.cancel-button {
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-left: 10px;
+
+}
+
+.cancel-button:hover {
+    background-color: #d32f2f;
+}
