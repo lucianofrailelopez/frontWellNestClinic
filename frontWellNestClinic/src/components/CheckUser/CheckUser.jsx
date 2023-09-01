@@ -14,31 +14,29 @@ const CheckUser = () => {
         setErrorMessage('');
     };
 
-    const handleCheckUser = () => {
-        const isUserValid = checkUserInSystem(cedula);
+    // const handleCheckUser = () => {
+    //     const isUserValid = checkUserInSystem(cedula);
 
-        if (isUserValid) {
-            navigate('/signup'); 
-        } else {
-            setErrorMessage('El usuario no se encuentra registrado en la obra social.');
-        }
-    };
-
-
-    // const handleCheckUser = async () => {
-    //     try {
-
-    //         const response = await axios.get(`https://serverwellnestclinic.onrender.com/userClient?name=${cedula}`);
-    //         if (response.status === 200) {
-    //             navigate('/signup');
-    //         } else {
-    //             setErrorMessage('El usuario no se encuentra registrado en la obra social.');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error al realizar la solicitud:', error);
-    //         setErrorMessage('Ocurrió un error al validar el usuario.');
+    //     if (isUserValid) {
+    //         navigate('/signup'); 
+    //     } else {
+    //         setErrorMessage('El usuario no se encuentra registrado en la obra social.');
     //     }
     // };
+
+
+    const handleCheckUser = async () => {
+        try {
+
+            const response = await axios.get(`https://serverwellnestclinic.onrender.com/userClient/isMember/${cedula}`);
+            if (response.status === 200) {
+                navigate('/signup');
+            }
+        } catch (error) {
+            window.alert(error.response.data.response);
+            setErrorMessage('Ocurrió un error al validar el usuario.');
+        }
+    };
     
 
     return (
