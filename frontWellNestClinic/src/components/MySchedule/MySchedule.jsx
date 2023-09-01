@@ -6,11 +6,14 @@ const MySchedule = () => {
     const [schedule, setSchedule] = useState([
         { id: 1, date: '2023-09-10', doctor: 'Dr. Smith', especialidad: "Otorrino" },
         { id: 2, date: '2023-09-11', doctor: 'Dr. Johnson', especialidad: "Cardiólogo" },
+        { id: 3, date: '2023-09-11', doctor: 'Dr. Johnson', especialidad: "Oftalmólogo" },
+        { id: 4, date: '2023-09-11', doctor: 'Dr. Johnson', especialidad: "Urólogo" },
+
     ]);
 
     const handleCancelSchedule = (id) => {
         const confirmDelete = window.confirm('¿Estás seguro de que deseas cancelar esta cita?');
-    
+
         if (confirmDelete) {
             const updatedSchedule = schedule.filter(schedule => schedule.id !== id);
             setSchedule(updatedSchedule);
@@ -19,26 +22,39 @@ const MySchedule = () => {
 
     return (
         <div className={styles.container}>
-            <h2 className={styles.header}>Mis Citas Médicas</h2>
+            <h2 className={styles.header}>My Schedules</h2>
             {schedule.length === 0 ? (
-                <p className={styles.noAppointments}>Usted no posee citas agendadas</p>
+                <div className={styles.containerSection}>
+                    <p className={styles.noAppointments}>Usted no posee citas agendadas</p>
+                </div>
             ) : (
-                <ul className={styles.scheduleList}>
-                    {schedule.map(schedule => (
-                        <li key={schedule.id} className={styles.appointment}>
-                            <span className={styles.date}>{schedule.date}</span>
-                            <span className={styles.doctor}>{schedule.doctor}</span>
-                            <span className={styles.specialty}>{schedule.especialidad}</span>
-                            <button className={styles['cancel-button']} onClick={() => handleCancelSchedule(schedule.id)}>
-                                Cancelar Cita
-                            </button>
-                        </li>
-                    ))}
-                </ul>
+                <div className={styles.containerSection}>
+                    <ul className={styles.scheduleList}>
+                        {schedule.map(schedule => (
+                            <li key={schedule.id} className={styles.appointment}>
+                                <span className={styles.date}>{schedule.date}</span>
+                                <span className={styles.doctor}>{schedule.doctor}</span>
+                                <span className={styles.specialty}>{schedule.especialidad}</span>
+                                <button className={styles['cancel-button']} onClick={() => handleCancelSchedule(schedule.id)}>
+                                    Cancelar Cita
+                                </button>
+                            </li>
+                        ))}
+                    </ul>
+
+
+
+                </div>
             )}
+
             <Link to="/newSchedule" className={styles.newScheduleButton}>
                 Agendar Nueva Cita
             </Link>
+
+            <Link to="/home" className={styles.newScheduleButton}>
+                Volver al Home
+            </Link>
+
         </div>
     );
 };
