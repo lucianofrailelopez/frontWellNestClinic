@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
 import LandingPage from './components/LandingPage/LandingPage';
 import Home from './pages/Home/Home';
@@ -19,4 +18,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
