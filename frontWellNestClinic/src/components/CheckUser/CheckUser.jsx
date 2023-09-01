@@ -25,6 +25,7 @@ const CheckUser = () => {
 
     return (
         <div className={styles.container}>
+        <div className={styles.containerSection}>
             <h2>Valide su usuario para continuar con el registro:</h2>
             <input
                 type="text"
@@ -34,6 +35,7 @@ const CheckUser = () => {
             />
             <button className={styles.button} onClick={handleCheckUser}>Validar Usuario</button>
             {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+        </div>
         </div>
     );
 };
