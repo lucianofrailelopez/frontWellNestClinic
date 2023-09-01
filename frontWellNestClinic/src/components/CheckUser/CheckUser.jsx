@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import { useNavigate } from 'react-router-dom';
 import styles from "../LandingPage/LandingPage.module.css"
+import axios from "axios";
 
 const CheckUser = () => {
     const navigate = useNavigate(); 
@@ -22,6 +23,23 @@ const CheckUser = () => {
             setErrorMessage('El usuario no se encuentra registrado en la obra social.');
         }
     };
+
+
+    // const handleCheckUser = async () => {
+    //     try {
+
+    //         const response = await axios.get(`https://serverwellnestclinic.onrender.com/userClient?name=${cedula}`);
+    //         if (response.status === 200) {
+    //             navigate('/signup');
+    //         } else {
+    //             setErrorMessage('El usuario no se encuentra registrado en la obra social.');
+    //         }
+    //     } catch (error) {
+    //         console.error('Error al realizar la solicitud:', error);
+    //         setErrorMessage('Ocurrió un error al validar el usuario.');
+    //     }
+    // };
+    
 
     return (
         <div className={styles.container}>
