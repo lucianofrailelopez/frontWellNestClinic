@@ -11,12 +11,12 @@ export const setUser = (user) => ({
   payload: user,
 });
 
-export const updateUserProfilePicture = (newProfilePicture) => ({
+export const updateProfilePicture = (newProfilePicture) => ({
   type: UPDATE_PROFILE_PICTURE,
   payload: newProfilePicture,
 });
 
-export const updateUserPassword = (newPassword) => ({
+export const updatePassword = (newPassword) => ({
   type: UPDATE_PASSWORD,
   payload: newPassword,
 });
@@ -28,3 +28,4 @@ export const payMembership = () => ({
 export const cancelMembership = () => ({
   type: CANCEL_MEMBERSHIP,
 });
+
