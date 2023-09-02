@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { connect } from 'react-redux';
-import { updateProfilePicture, updatePassword, cancelMembership } from './actions';
+import { updateProfilePicture, updatePassword, cancelMembership } from '../../redux/actions';
 
 function MyProfile(props) {
   const { userData, membershipStatus, updateProfilePicture, updatePassword, cancelMembership } = props;
