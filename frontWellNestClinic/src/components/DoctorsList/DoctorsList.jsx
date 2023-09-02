@@ -63,16 +63,14 @@ const DoctorsList = () => {
     }, []);
 
     const filteredDoctors = doctors.filter((doctor) => {
-        // Si no se ha seleccionado ninguna especialidad, muestra todos los médicos
         if (!selectedSpecialty) {
           return true;
         }
-        // Compara la especialidad del médico con la especialidad seleccionada
         return doctor.specialty === selectedSpecialty;
       });
 
     return (
-        <div>
+        <div className={styles.container }>
             <div>
                 <select
                     value={selectedSpecialty}
