@@ -2,6 +2,7 @@ import React from 'react';
 import LandingPage from './components/LandingPage/LandingPage';
 import Home from './pages/Home/Home';
 import NavBar from './components/NavBar/NavBar';
+import MyProfile from './pages/MyProfile/MyProfile';
 import {Route, Routes, useLocation} from "react-router-dom";
 import './App.css'
 
