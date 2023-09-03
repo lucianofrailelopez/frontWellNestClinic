@@ -1,3 +1,6 @@
+.page {
+  background-image: ('https://d1odllitvcy39q.cloudfront.net/images/141_nueva-fachada-seguro-americano-2014.jpg')
+}
 .heading {
   font-size: 34px;
   margin-bottom: 70px;
@@ -10,6 +13,7 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     background-color: #fff;
+    
   }
   
   .form {
@@ -40,5 +44,11 @@
   
   .button:hover {
     background-color: #0056b3;
+  }
+  
+  .error {
+    color: red;
+    font-size: 14px;
+    margin-top: 2px;
   }
   
